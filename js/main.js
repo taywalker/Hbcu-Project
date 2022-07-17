@@ -2,10 +2,11 @@ $(document).ready(function() {
 // Create a function that creates the start button and initial screen
 
 function initialScreen() {
-	startExperienceScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Experienced</a></p>";
-	startMinimalScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Minimal Experience</a></p>";
-	startNoExperienceScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>No Experience</a></p>";
-	$(".experienceArea").html(startExperienceScreen);$(".minimalArea").html(startMinimalScreen);$(".noExperienceArea").html(startNoExperienceScreen);
+	startExperienceScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Begin</a></p>";
+	// startMinimalScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Minimal Experience</a></p>";
+	// startNoExperienceScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>No Experience</a></p>";
+	// $(".experienceArea").html(startExperienceScreen);$(".minimalArea").html(startMinimalScreen);$(".noExperienceArea").html(startNoExperienceScreen);
+	$(".experienceArea").html(startExperienceScreen);
 }
 
 initialScreen();
@@ -15,11 +16,24 @@ initialScreen();
 $("body").on("click", ".start-button", function(event){
 	event.preventDefault();  // added line to test issue on GitHub Viewer
 	clickSound.play();
+	// lesson();
 	generateHTML();
+
 
 	timerWrapper();
 
 }); // Closes start-button click
+
+$("body").on("click", ".next-button", function(event){
+	  // added line to test issue on GitHub Viewer
+	clickSound.play();
+	// lesson();
+	generateHTML();
+
+
+	// timerWrapper();
+
+});
 
 $("body").on("click", ".answer", function(event){
 	//answeredQuestion = true;
@@ -71,6 +85,11 @@ function generateHTML() {
 	$(".experienceArea").html(gameHTML);
 }
 
+function lesson() {
+	lesson1 =  "<p class='text-center timer-p'>Lesson 1 - What is Python? </p> <p class= 'text-center'>" + lesson1 + "</p>" + 	startExperienceScreen + "<p class='text-center next-button-container'><a class='btn btn-primary btn-lg btn-block next-button' href='#' role='button'>Start quiz</a></p>";
+	$(".experienceArea").html(lesson1);
+}
+
 function wait() {
 	if (questionCounter < 7) {
 	questionCounter++;
@@ -109,17 +128,19 @@ function resetGame() {
 	unansweredTally = 0;
 	counter = 30;
 	generateHTML();
+	lesson();
 	timerWrapper();
 }
 
 var startScreen;
 var gameHTML;
 var counter = 30;
-var questionArray = ["What is the capital of Australia?", "What is the capital of Liberia?", "What is the capital of Taiwan?", "What is the capital of Japan?", "What is the capital of China?", "What is the capital of Turkey?", "What is the capital of Colombia?", "What is the capital of India?"];
-var answerArray = [["Canberra", "Melbourne", "Sydney", "Darwin"], ["Arthington","Monrovia","Tuzon","Marshall"], ["Tainan City", "Taichung", "Taipei", "Hsinchu"], ["Kyoto","Hiroshima","Tokyo","Osaka"], ["Hong Kong", "Macau", "Shanghai", "Beijing"], ["Ankara","Istanbul","Antalya","Bursa"], ["Medellin", "Bogota", "Cartagena", "Cali"], ["Mumbai","Hyderabad","Bangalore","New Delhi"]];
+var questionArray = ["Who Invented Python?", "What is the capital of Liberia?", "What is the capital of Taiwan?", "What is the capital of Japan?", "What is the capital of China?", "What is the capital of Turkey?", "What is the capital of Colombia?", "What is the capital of India?"];
+var answerArray = [["Steve Jobs", "Bjarne Stroustrup", "Guido Van Rossum", "Anders Hejlsberg"], ["Arthington","Monrovia","Tuzon","Marshall"], ["Tainan City", "Taichung", "Taipei", "Hsinchu"], ["Kyoto","Hiroshima","Tokyo","Osaka"], ["Hong Kong", "Macau", "Shanghai", "Beijing"], ["Ankara","Istanbul","Antalya","Bursa"], ["Medellin", "Bogota", "Cartagena", "Cali"], ["Mumbai","Hyderabad","Bangalore","New Delhi"]];
 var imageArray = ["<img class='center-block img-right' src='img/australia.png'>", "<img class='center-block img-right' src='img/liberia.png'>", "<img class='center-block img-right' src='img/taiwan.png'>", "<img class='center-block img-right' src='img/japan.png'>", "<img class='center-block img-right' src='img/china.png'>", "<img class='center-block img-right' src='img/turkey.png'>", "<img class='center-block img-right' src='img/colombia.png'>", "<img class='center-block img-right' src='img/india.png'>"];
-var correctAnswers = ["A. Canberra", "B. Monrovia", "C. Taipei", "C. Tokyo", "D. Beijing", "A. Ankara", "B. Bogota", "D. New Delhi"];
+var correctAnswers = ["C. Guido Van Rossum", "B. Monrovia", "C. Taipei", "C. Tokyo", "D. Beijing", "A. Ankara", "B. Bogota", "D. New Delhi"];
 var questionCounter = 0;
+var lesson1 = "What is Python? Python is a programming language released in 1991 by Guido Van Rossum. Python is user-friendly and widely considered as one of the most popular programming languages. Python combines standard English with programming syntax to make it more understandable for the user. In addition, python’s syntax allows the programmer to solve a problem using less lines of code. Python also has a wide variety of libraries and frameworks that can be utilized by programmers to fit their needs. However, Python is slower compared to other languages."
 var selecterAnswer;
 var theClock;
 var correctTally = 0;
