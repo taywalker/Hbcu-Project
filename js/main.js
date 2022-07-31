@@ -36,17 +36,17 @@ $("body").on("click", ".next-button", function(event){
 });
 
 $("body").on("click", ".answer", function(event){
-	//answeredQuestion = true;
+	answeredQuestion = true;
 	clickSound.play();
-	selectedAnswer = $(this).text();
+	 selectedAnswer = $(this).text();
 	if(selectedAnswer === correctAnswers[questionCounter]) {
-		//alert("correct");
+		alert("correct");
 
 		clearInterval(theClock);
 		generateWin();
 	}
 	else {
-		//alert("wrong answer!");
+		alert("wrong answer!");
 		clearInterval(theClock);
 		generateLoss();
 	}
@@ -62,22 +62,22 @@ $("body").on("click", ".reset-button", function(event){
 function generateLossDueToTimeOut() {
 	unansweredTally++;
 	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
-	$(".mainArea").html(gameHTML);
+	$(".experienceArea").html(gameHTML);
 	setTimeout(wait, 4000);  //  change to 4000 or other amount
 }
 
 function generateWin() {
 	correctTally++;
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswers[questionCounter] + "</p>" + imageArray[questionCounter];
-	$(".mainArea").html(gameHTML);
-	setTimeout(wait, 4000);  //  change to 4000 or other amount
+	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/checkmark-24.png'>";
+	$(".expereienceArea").html(gameHTML);
+	setTimeout(wait, 1000);  //  change to 4000 or other amount
 }
 
 function generateLoss() {
 	incorrectTally++;
 	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
-	$(".mainArea").html(gameHTML);
-	setTimeout(wait, 4000); //  change to 4000 or other amount
+	$(".experienceArea").html(gameHTML);
+	setTimeout(wait, 1000); //  change to 4000 or other amount
 }
 
 function generateHTML() {
@@ -91,7 +91,7 @@ function lesson() {
 }
 
 function wait() {
-	if (questionCounter < 7) {
+	if (questionCounter <  4) {
 	questionCounter++;
 	generateHTML();
 	counter = 30;
@@ -118,7 +118,7 @@ function timerWrapper() {
 
 function finalScreen() {
 	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>All done, here's how you did!" + "</p>" + "<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='#' role='button'>Reset The Quiz!</a></p>";
-	$(".mainArea").html(gameHTML);
+	$(".experienceArea").html(gameHTML);
 }
 
 function resetGame() {
@@ -135,13 +135,13 @@ function resetGame() {
 var startScreen;
 var gameHTML;
 var counter = 30;
-var questionArray = ["Who Invented Python?", "What is the capital of Liberia?", "What is the capital of Taiwan?", "What is the capital of Japan?", "What is the capital of China?", "What is the capital of Turkey?", "What is the capital of Colombia?", "What is the capital of India?"];
-var answerArray = [["Steve Jobs", "Bjarne Stroustrup", "Guido Van Rossum", "Anders Hejlsberg"], ["Arthington","Monrovia","Tuzon","Marshall"], ["Tainan City", "Taichung", "Taipei", "Hsinchu"], ["Kyoto","Hiroshima","Tokyo","Osaka"], ["Hong Kong", "Macau", "Shanghai", "Beijing"], ["Ankara","Istanbul","Antalya","Bursa"], ["Medellin", "Bogota", "Cartagena", "Cali"], ["Mumbai","Hyderabad","Bangalore","New Delhi"]];
+var questionArray = ["Who Invented Python?", "What year was Python released?", "Python's syntax allows users to write programs using less lines of code compared to other programming languages?"];
+var answerArray = [["Steve Jobs", "Bjarne Stroustrup", "Guido Van Rossum", "Anders Hejlsberg"], ["1995","1991","1987","2003"], ["True", "False"], ["True","False"]];
 var imageArray = ["<img class='center-block img-right' src='img/australia.png'>", "<img class='center-block img-right' src='img/liberia.png'>", "<img class='center-block img-right' src='img/taiwan.png'>", "<img class='center-block img-right' src='img/japan.png'>", "<img class='center-block img-right' src='img/china.png'>", "<img class='center-block img-right' src='img/turkey.png'>", "<img class='center-block img-right' src='img/colombia.png'>", "<img class='center-block img-right' src='img/india.png'>"];
-var correctAnswers = ["C. Guido Van Rossum", "B. Monrovia", "C. Taipei", "C. Tokyo", "D. Beijing", "A. Ankara", "B. Bogota", "D. New Delhi"];
+var correctAnswers = ["C. Guido Van Rossum", "B. 1991", "A. True", "B. False"];
 var questionCounter = 0;
 var lesson1 = "What is Python? Python is a programming language released in 1991 by Guido Van Rossum. Python is user-friendly and widely considered as one of the most popular programming languages. Python combines standard English with programming syntax to make it more understandable for the user. In addition, python’s syntax allows the programmer to solve a problem using less lines of code. Python also has a wide variety of libraries and frameworks that can be utilized by programmers to fit their needs. However, Python is slower compared to other languages."
-var selecterAnswer;
+var selectedAnswer;
 var theClock;
 var correctTally = 0;
 var incorrectTally = 0;
