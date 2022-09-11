@@ -15,6 +15,7 @@
   max-width: 610px;
   margin-left: auto;
   margin-right: auto;
+
 }
 .startButton{
   margin-top: 175px;
@@ -30,6 +31,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border-radius: 10px;
 }
 
 .next-button-container {
@@ -79,6 +81,27 @@
 }
 
 body {
-  background-color: #DD0506;
+  background-color: #690202;
   color: white;
+}
+.next-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.back-button {
+  background-color: #17165f; /* Green */
+  border: none;
+  color: white;
+  padding: px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 50px;
 }

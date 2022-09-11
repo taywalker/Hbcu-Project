@@ -40,8 +40,9 @@ $("body").on("click", ".answer", function(event){
 	answeredQuestion = true;
 	clickSound.play();
 	 selectedAnswer = $(this).text();
+	 console.log("(" + selectedAnswer + "=" + correctAnswers[questionCounter]+ ")")
 	if(selectedAnswer === correctAnswers[questionCounter]) {
-		alert("correct");
+	
 		confetti.start()
 		setTimeout(function() {
 			confetti.stop()
@@ -50,7 +51,7 @@ $("body").on("click", ".answer", function(event){
 		generateWin();
 	}
 	else {
-		alert("wrong answer!");
+		
 		clearInterval(theClock);
 		generateLoss();
 	}
@@ -80,7 +81,7 @@ function generateWin() {
 function generateLoss() {
 	incorrectTally++;
 	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
-	$(".experienceArea").html(gameHTML);
+	$(".experienceArea").html(gameHTML);6
 	setTimeout(wait, 1000); //  change to 4000 or other amount
 }
 
@@ -95,7 +96,7 @@ function lesson() {
 }
 
 function wait() {
-	if (questionCounter <  4) {
+	if (questionCounter <  11) {
 	questionCounter++;
 	generateHTML();
 	counter = 30;
@@ -140,10 +141,43 @@ function resetGame() {
 var startScreen;
 var gameHTML;
 var counter = 30;
-var questionArray = ["Who Invented Python?", "What year was Python released?", "Python's syntax allows users to write programs using less lines of code compared to other programming languages?"];
-var answerArray = [["Steve Jobs", "Bjarne Stroustrup", "Guido Van Rossum", "Anders Hejlsberg"], ["1995","1991","1987","2003"], ["True", "False"], ["True","False"]];
-var imageArray = ["<img class='center-block img-right' src='img/australia.png'>", "<img class='center-block img-right' src='img/liberia.png'>", "<img class='center-block img-right' src='img/taiwan.png'>", "<img class='center-block img-right' src='img/japan.png'>", "<img class='center-block img-right' src='img/china.png'>", "<img class='center-block img-right' src='img/turkey.png'>", "<img class='center-block img-right' src='img/colombia.png'>", "<img class='center-block img-right' src='img/india.png'>"];
-var correctAnswers = ["C. Guido Van Rossum", "B. 1991", "A. True", "B. False"];
+var questionArray = ["Algorithms are a step-by-step solution using a set of rules to solve a problem",
+					'What does the example show --> "4" + "4"',
+ 					"What two data types does the problem contain? --> 4 + 1.3",
+ 					"What Value will this Boolean return? 3!=3",
+					"What two math symbols would be use to make the statement true? --> 4 _ 3 _ 1 = 12",
+					"Python reads code from right to left?",
+					"Which answer has the proper syntax for how a string should be written?",
+					"What would be returned from the math statement? --> 4 * (8+2)",
+					'What would this line of code return? --> "Hello" + *4"',
+					"What are the four data types taled about in lesson 1?"];
+
+
+var answerArray = [	["True","False"],
+					["Concatenation","Algorithm","Conjugate","Addition"],
+					["Integer and Integer", "Float and String", "Integer and Float", " Float and Float"],
+					["True","False"],
+					["*,*", "-,+", "*,-","+,/"],
+					["True", "False"],
+					["~Hello~", '"Hello"',"*Hello*","*Hello*"],
+					["40", "34", "50", "16"],
+					["Hello4","Hello 4","Syntax Error", "4Hello"],
+					["List, String, Tuple, Set"," Float, None, Boolean, Arrary", "Dictionary, Set, String, Range", "Float, Boolean, String, Integer"]];
+
+			
+//var imageArray = ["<img class='center-block img-right' src='img/australia.png'>", "<img class='center-block img-right' src='img/liberia.png'>", "<img class='center-block img-right' src='img/taiwan.png'>", "<img class='center-block img-right' src='img/japan.png'>", "<img class='center-block img-right' src='img/china.png'>", "<img class='center-block img-right' src='img/turkey.png'>", "<img class='center-block img-right' src='img/colombia.png'>", "<img class='center-block img-right' src='img/india.png'>"];
+var correctAnswers = ["A. True",
+					"A. Concatenation",
+					"C. Integer and Float",
+					"B. False",
+					"A. *,*",
+					"B. False",
+					'B. "Hello"',
+					"A. 40",
+					"C. Syntax Error",
+					"D. Float, Boolean, String, Integer"];
+
+
 var questionCounter = 0;
 var lesson1 = "What is Python? Python is a programming language released in 1991 by Guido Van Rossum. Python is user-friendly and widely considered as one of the most popular programming languages. Python combines standard English with programming syntax to make it more understandable for the user. In addition, python’s syntax allows the programmer to solve a problem using less lines of code. Python also has a wide variety of libraries and frameworks that can be utilized by programmers to fit their needs. However, Python is slower compared to other languages."
 var selectedAnswer;
