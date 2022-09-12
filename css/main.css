@@ -104,6 +104,7 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 50px;
+
 }
 .rookie-button {
   background-color: #4CAF50; /* Green */
@@ -115,6 +116,9 @@ body {
   display: inline-block;
   font-size: 50px;
   width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  font-family: "Papyrus"
 }
 .intermediate-button{
   background-color: #4CAF50; /* Green */
@@ -126,6 +130,9 @@ body {
   display: inline-block;
   font-size: 50px;
   width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  font-family: "Papyrus"
 }
 .experienced-button{
   background-color: #4CAF50; /* Green */
@@ -137,4 +144,7 @@ body {
   display: inline-block;
   font-size: 50px;
   width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  font-family: "Papyrus"
 }
