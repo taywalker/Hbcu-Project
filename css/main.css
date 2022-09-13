@@ -208,7 +208,9 @@
       radial-gradient(2px 2px at 195px 95px, white, rgba(255, 255, 255, 0)), 
       radial-gradient(2.5px 2.5px at 95px 145px, white, rgba(255, 255, 255, 0));
   }
-  
+  .ul{
+      font:45px "Arial", san-serif;
+  }
   @keyframes space {
     40% {
       opacity: 0.75;
@@ -222,4 +224,5 @@
     100% {
       transform: rotate(360deg);
     }
+  
   }
