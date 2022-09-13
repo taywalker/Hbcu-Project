@@ -18,14 +18,14 @@
   
   }
   .startButton{
-    position: relative;
-    left: 670px;
+    position: absolute;
+    top: 300px;
+    left: 525px;
     margin-top: 175px;
-    max-width: 610px;
     margin-left: auto;
     margin-right: auto;
     color: white;
-    background-color: black; /* Green */
+    background-color: #4caf50; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -34,6 +34,7 @@
     display: inline-block;
     font-size: 16px;
     border-radius: 10px;
+    font-family: "Lucida Console";
   }
   
   .next-button-container {
@@ -94,6 +95,10 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    border: 2px solid #000000;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-family: "Lucida Console";
   }
   
   .back-button {
@@ -105,6 +110,10 @@
     text-decoration: none;
     display: inline-block;
     font-size: 50px;
+    border: 2px solid #000000;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-family: "Lucida Console";
   }
   .rookie-button {
     background-color: #4CAF50; /* Green */
@@ -116,6 +125,10 @@
     display: inline-block;
     font-size: 50px;
     width: 500px;
+    border: 2px solid #000000;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-family: "Lucida Console";
   }
   .intermediate-button{
     background-color: #4CAF50; /* Green */
@@ -127,6 +140,10 @@
     display: inline-block;
     font-size: 50px;
     width: 500px;
+    border: 2px solid #000000;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-family: "Lucida Console";
   }
   .experienced-button{
     background-color: #4CAF50; /* Green */
@@ -138,6 +155,10 @@
     display: inline-block;
     font-size: 50px;
     width: 500px;
+    border: 2px solid #000000;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 12px;
+    font-family: "Lucida Console";
   }
   
   body {
