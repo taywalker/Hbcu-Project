@@ -102,8 +102,10 @@ function wait() {
 	counter = 30;
 	timerWrapper();
 	}
-	else {
+	else if(correctTally>=7){
 		finalScreen();
+	} else if(correctTally<7 ){
+		finalFailScreen();
 	}
 }
 
@@ -122,7 +124,11 @@ function timerWrapper() {
 }
 
 function finalScreen() {
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>All done, here's how you did!" + "</p>" + "<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='#' role='button'>Reset The Quiz!</a></p>";
+	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>"+ "<p class='text-center'>Good job" + "</p>" + "<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>"+ "<p>You got: " + correctTally +"/"+ 10 + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='lesson1pg2.html' role='button'>Next Lesson</a></p>";
+	$(".experienceArea").html(gameHTML);
+}
+function finalFailScreen() {
+	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>All done, here's how you did!" + "</p>" + "<p class='text-center'>Try again" + "</p>" +"<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>"+ "<p>You got: " + correctTally +"/"+ 10 + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='lesson.html' role='button'>Reset The Quiz!</a></p>";
 	$(".experienceArea").html(gameHTML);
 }
 
