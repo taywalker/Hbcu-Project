@@ -124,7 +124,7 @@ function timerWrapper() {
 }
 
 function finalScreen() {
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>"+ "<p class='text-center'>Good job" + "</p>" + "<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>"+ "<p>You got: " + correctTally +"/"+ 10 + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='lesson1pg2.html' role='button'>Next Lesson</a></p>";
+	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>"+ "<p class='text-center'>Good job" + "</p>" + "<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>"+ "<p>You got: " + correctTally +"/"+ 10 + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='lesson_outline.html' role='button'>Next Lesson</a></p>";
 	$(".experienceArea").html(gameHTML);
 }
 function finalFailScreen() {
