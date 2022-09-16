@@ -2,11 +2,8 @@
 $(document).ready(function() {
 // Create a function that creates the start button and initial screen
 
-function initialScreen() {
-	startExperienceScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Begin</a></p>";
-	// startMinimalScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Minimal Experience</a></p>";
-	// startNoExperienceScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>No Experience</a></p>";
-	// $(".experienceArea").html(startExperienceScreen);$(".minimalArea").html(startMinimalScreen);$(".noExperienceArea").html(startNoExperienceScreen);
+function initialScreen() { // Button that displays after the lessons are done
+	startExperienceScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Begin your quiz!</a></p>";
 	$(".experienceArea").html(startExperienceScreen);
 }
 
@@ -66,27 +63,27 @@ $("body").on("click", ".reset-button", function(event){
 
 function generateLossDueToTimeOut() {
 	unansweredTally++;
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+	gameHTML = "<p class='text-center timer-p'><span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
 	$(".experienceArea").html(gameHTML);
 	setTimeout(wait, 4000);  //  change to 4000 or other amount
 }
 
 function generateWin() {
 	correctTally++;
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/checkmark-24.png'>";
+	gameHTML = "<p class='text-center timer-p'>: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/checkmark-24.png'>";
 	$(".expereienceArea").html(gameHTML);
 	setTimeout(wait, 1000);  //  change to 4000 or other amount
 }
 
 function generateLoss() {
 	incorrectTally++;
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+	gameHTML = "<p class='text-center timer-p'><span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
 	$(".experienceArea").html(gameHTML);6
 	setTimeout(wait, 1000); //  change to 4000 or other amount
 }
 
 function generateHTML() {
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0] + "</p><p class='answer'>B. "+answerArray[questionCounter][1]+"</p><p class='answer'>C. "+answerArray[questionCounter][2]+"</p><p class='answer'>D. "+answerArray[questionCounter][3]+"</p>";
+	gameHTML = "<p class='text-center timer-p'><span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0] + "</p><p class='answer'>B. "+answerArray[questionCounter][1]+"</p><p class='answer'>C. "+answerArray[questionCounter][2]+"</p><p class='answer'>D. "+answerArray[questionCounter][3]+"</p>";
 	$(".experienceArea").html(gameHTML);
 }
 
@@ -124,11 +121,11 @@ function timerWrapper() {
 }
 
 function finalScreen() {
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>"+ "<p class='text-center'>Good job" + "</p>" + "<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>"+ "<p>You got: " + correctTally +"/"+ 10 + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href= 'lesson_outline.html' role='button'>Next Lesson</a></p>";
+	gameHTML = "<p class='text-center timer-p'> <span class='timer'>" + counter + "</span></p>"+ "<p class='text-center'>Good job" + "</p>" + "<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>"+ "<p>You got: " + correctTally +"/"+ 10 + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href= 'lesson_outline.html' role='button'>Next Lesson</a></p>";
 	$(".experienceArea").html(gameHTML);
 }
 function finalFailScreen() {
-	gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>All done, here's how you did!" + "</p>" + "<p class='text-center'>Try again" + "</p>" +"<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>"+ "<p>You got: " + correctTally +"/"+ 10 + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='lesson_outline.html' role='button'>Reset The Quiz!</a></p>";
+	gameHTML = "<p class='text-center timer-p'><span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>All done, here's how you did!" + "</p>" + "<p class='text-center'>Try again" + "</p>" +"<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>"+ "<p>You got: " + correctTally +"/"+ 10 + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='lesson_outline.html' role='button'>Reset The Quiz!</a></p>";
 	$(".experienceArea").html(gameHTML);
 }
 

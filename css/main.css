@@ -20,12 +20,6 @@
   
   }
   .startButton{
-    position: absolute;
-    top: 300px;
-    left: 525px;
-    margin-top: 175px;
-    margin-left: auto;
-    margin-right: auto;
     color: white;
     background-color: #3877aa; /* Green */
     border: none;
@@ -34,10 +28,10 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     border-radius: 10px;
     font-family: "Roboto";
-    
+    box-shadow: 5px 5px 0px 0px rgb(255, 255, 255)
 
   }
 
@@ -56,19 +50,35 @@
   
   .timer-p {
     margin-top: 40px;
+    color: #3877aa;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    font-size: 80%;
+    border: 5px solid #fff;
+    background-color: transparent;
+    font-family: "Roboto";
+    text-align: center; line-height: 70px;
+    position: relative; left: 350px;
   }
   
   .answer:hover {
-    background: pink;
+    background: #3877aa;
+    color: #fff;
   }
   
   .answer {
     padding-top: 7px;
+    padding-left: 14px;;
     height: 45px;
+    width: 525px;;
     color: black;
-    padding-left: 14px;
     background-color: white;
-    border-radius: 4px;
+    border-radius: 50px;
+    font-family: "Roboto";
+    color:#3877aa;
+    position: relative; top: auto; left: 15%;
+
   }
   
   .img-wrong {
