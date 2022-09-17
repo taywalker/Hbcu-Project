@@ -4,7 +4,7 @@
    Author's custom styles
    ========================================================================== */
    a { text-decoration: none }
-   a:hover, a:visited {color: #fff; text-decoration: none;}
+   a:hover {color: #fff; text-decoration: none; background: #000;}
    
    .jumbotron {
     box-sizing: border-box;
@@ -18,6 +18,31 @@
     margin-left: auto;
     margin-right: auto;
   
+  }
+
+  .lesson-card {
+    background-color: #fff;
+       padding: 50px 150px;
+    border-radius: 39px;
+    margin-top: 50px;
+}
+
+.lesson-header1 {
+  font-size: 35px;
+    font-weight: 600;
+    color: #3777aa !important;
+    text-align: center;
+    margin-bottom: 30px
+}
+  .main-header, .lesson-header2, .objectives {
+    text-align: center;
+    color:  #000!important;
+  }
+
+  .objectives {
+        font-size: 24px;
+    line-height: 34px;
+    text-align: justify !important;
   }
   .startButton{
     color: white;
@@ -42,10 +67,46 @@
     margin-right: auto;
   
   }
+
+  .logo img {
+    width: 250px;
+}
+
+.experienceArea {
+    color: #000;
+}
   .button-container {
     display: flex;  
     justify-content: center;  
     align-items: center;  
+  }
+
+  ul.result-display li {
+    display: inline-block;
+    background: #fff;
+    text-align: center;
+    padding: 35px;
+    font-size: 16px;
+    overflow: hidden;
+    margin: 17px;
+    color: #000;
+    border-radius: 15px;
+    position: relative;
+}
+
+span.result-number {
+    font-size: 50px;
+}
+
+.result-display {
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+  .lesson-content{
+    color:  #000;
+    text-align: justify;
+    margin-bottom: 30px;
   }
   
   .timer-p {
@@ -54,7 +115,8 @@
     border-radius: 50%;
     width: 75px;
     height: 75px;
-    font-size: 80%;
+       font-weight: 900!important;
+    font-size: 40px!important;
     border: 5px solid #fff;
     background-color: transparent;
     font-family: "Roboto";
@@ -62,6 +124,23 @@
     position: relative; left: 350px;
   }
   
+  .lesson-title {
+    color:  #000!important;
+    margin-bottom:  30px;
+  }
+  .logo {
+        font-family: Georgia, 'Times New Roman', Times, serif; 
+        font-size: 400%;
+        text-align: center;
+        color:  #000;
+  }
+
+  .title {
+      color:  #000;
+      text-align: center;
+      font-size: 200%;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+  }
   .answer:hover {
     background: #3877aa;
     color: #fff;
@@ -109,7 +188,6 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border: 2px solid #000000;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 12px;
     font-family: "Roboto";
@@ -124,12 +202,12 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border: 2px solid #000000;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 12px;
     font-family: "Roboto";
   }
-  .rookie-button {
+  .rookie-button, .intermediate-button, .experienced-button 
+  {
     background-color: #3877aa; /* Green */
     border: none;
     color: white;
@@ -137,39 +215,8 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 50px;
-    width: 500px;
-    border: 2px solid #000000;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    border-radius: 12px;
-    font-family: "Roboto";
-  }
-  .intermediate-button{
-    background-color: #3877aa; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 50px;
-    width: 500px;
-    border: 2px solid #000000;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    border-radius: 12px;
-    font-family: "Roboto";
-  }
-  .experienced-button{
-    background-color: #3877aa; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 50px;
-    width: 500px;
-    border: 2px solid #000000;
+    font-size: 38px;
+    width: 300px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 12px;
     font-family: "Roboto";
