@@ -247,6 +247,11 @@ mark.red {
   background: none;
 }
 
+mark.green {
+  color:green;
+  background:none
+}
+
 
 body img{
   display:block;
