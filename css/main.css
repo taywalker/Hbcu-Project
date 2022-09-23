@@ -224,6 +224,20 @@ body {
   border-radius: 12px;
   font-family: "Roboto";
 }
+.locked-button{
+  background-color: #bab3b3; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 38px;
+  width: 300px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 12px;
+  font-family: "Roboto";
+}
 
 body {
   background: #ffab2f;
@@ -251,7 +265,10 @@ mark.green {
   color:green;
   background:none
 }
-
+mark.black{
+  color: black;
+  background: none;
+}
 
 body img{
   display:block;
