@@ -251,7 +251,10 @@ mark.green {
   color:green;
   background:none
 }
-
+mark.black{
+  color: black;
+  background: none;
+}
 
 body img{
   display:block;
