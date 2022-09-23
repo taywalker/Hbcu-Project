@@ -38,7 +38,6 @@ $(document).ready(function() {
 		 selectedAnswer = $(this).text();
 		 console.log("(" + selectedAnswer + "=" + correctAnswers[questionCounter]+ ")")
 		if(selectedAnswer === correctAnswers[questionCounter]) {
-			$("#" + selectedAnswer).css("background-color", "green");
 			confetti.start()
 			setTimeout(function() {
 				confetti.stop()
@@ -143,25 +142,40 @@ $(document).ready(function() {
 	var startScreen;
 	var gameHTML;
 	var counter = 30;
-	var questionArray = ["What is the correct syntax for a string?",
-						 "Which answer correclty displays an integer?",
-						 "Which method correctly converts a string to a float?",
-						 "Choose the correct concatenation method?",
+	var questionArray = ["Algorithms are a step-by-step solution using a set of rules to solve a problem",
+						'What does the example show --> "4" + "4"',
+						"What two data types does the problem contain? --> 4 + 1.3",
+						"What Value will this Boolean return? 3!=3",
+						"What two math symbols would be use to make the statement true? --> 4 _ 3 _ 1 = 12",
+						"Python reads code from right to left?",
+						"Which answer has the proper syntax for how a string should be written?",
+						"What would be returned from the math statement? --> 4 * (8+2)",
+						'What would this line of code return? --> "Hello" + *4"',
 						"What are the four data types taled about in lesson 1?"];
 	
 	
-	var answerArray = [	['print["hello"]', 'print("Hello")', 'print("hello"]', 'print{"hello"}'],
-						["36", "4.0", '"-1"', "165.6"],
-						['str(4.0)', 'float(3)', 'int(3.0)', 'float(-5)' ],
-						['"Hello" * "John"', "2 + 2", '"Today is" += "Friday"', '"My name is" +++ "Chris"']
+	var answerArray = [	["True","False","",""],
+						["Concatenation","Algorithm","Conjugate","Addition"],
+						["Integer and Integer", "Float and String", "Integer and Float", " Float and Float"],
+						["True","False"],
+						["*,*", "-,+", "*,-","+,/"],
+						["True", "False"],
+						["~Hello~", '"Hello"',"*Hello*","*Hello*"],
+						["40", "34", "50", "16"],
+						["Hello4","Hello 4","Syntax Error", "4Hello"],
 						["List, String, Tuple, Set"," Float, None, Boolean, Arrary", "Dictionary, Set, String, Range", "Float, Boolean, String, Integer"]];
 	
 				
 	//var imageArray = ["<img class='center-block img-right' src='img/australia.png'>", "<img class='center-block img-right' src='img/liberia.png'>", "<img class='center-block img-right' src='img/taiwan.png'>", "<img class='center-block img-right' src='img/japan.png'>", "<img class='center-block img-right' src='img/china.png'>", "<img class='center-block img-right' src='img/turkey.png'>", "<img class='center-block img-right' src='img/colombia.png'>", "<img class='center-block img-right' src='img/india.png'>"];
-	var correctAnswers = ['B. print("Hello")',
-						"A. 36",
-						"A. str(4.0)",
-						"B. 2+2",
+	var correctAnswers = ["A. True",
+						"A. Concatenation",
+						"C. Integer and Float",
+						"B. False",
+						"A. *,*",
+						"B. False",
+						'B. "Hello"',
+						"A. 40",
+						"C. Syntax Error",
 						"D. Float, Boolean, String, Integer"];
 	
 	
