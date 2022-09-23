@@ -38,6 +38,7 @@ $(document).ready(function() {
 		 selectedAnswer = $(this).text();
 		 console.log("(" + selectedAnswer + "=" + correctAnswers[questionCounter]+ ")")
 		if(selectedAnswer === correctAnswers[questionCounter]) {
+			$("#" + selectedAnswer).css("background-color", "green");
 			confetti.start()
 			setTimeout(function() {
 				confetti.stop()
@@ -70,14 +71,14 @@ $(document).ready(function() {
 		correctTally++;
 		gameHTML = "<p class='text-center timer-p'>: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/checkmark-24.png'>";
 		$(".expereienceArea").html(gameHTML);
-		setTimeout(wait, 1000);  //  change to 4000 or other amount
+		setTimeout(wait, 4000);  //  change to 4000 or other amount
 	}
 	
 	function generateLoss() {
 		incorrectTally++;
 		gameHTML = "<p class='text-center timer-p'><span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
 		$(".experienceArea").html(gameHTML);6
-		setTimeout(wait, 1000); //  change to 4000 or other amount
+		setTimeout(wait, 4000); //  change to 4000 or other amount
 	}
 	
 	function generateHTML() {
