@@ -38,7 +38,6 @@ $(document).ready(function() {
 		 selectedAnswer = $(this).text();
 		 console.log("(" + selectedAnswer + "=" + correctAnswers[questionCounter]+ ")")
 		if(selectedAnswer === correctAnswers[questionCounter]) {
-			$("#" + selectedAnswer).css("background-color", "green");
 			confetti.start()
 			setTimeout(function() {
 				confetti.stop()
